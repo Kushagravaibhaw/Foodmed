@@ -2,8 +2,12 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     package="com.example.railwaysfoodapplication">
-    <uses-permission android:name="android.permission.SEND_SMS"></uses-permission>
 
+    <uses-feature
+        android:name="android.hardware.telephony"
+        android:required="false" />
+
+    <uses-permission android:name="android.permission.SEND_SMS"/>
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -14,6 +18,27 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.RailwaysFoodApplication"
         tools:targetApi="31">
+        <activity
+            android:name=".orderverificationphar"
+            android:exported="false" />
+        <activity
+            android:name=".pharsummary"
+            android:exported="false" />
+        <activity
+            android:name=".passengerpharambill"
+            android:exported="false" />
+        <activity
+            android:name=".pharmacyorder"
+            android:exported="false" />
+        <activity
+            android:name=".passanger1"
+            android:exported="false" />
+        <activity
+            android:name=".pharmacy"
+            android:exported="false" />
+        <activity
+            android:name=".pharmacyentry"
+            android:exported="false" />
         <activity
             android:name=".PassangerSummery"
             android:exported="false" />

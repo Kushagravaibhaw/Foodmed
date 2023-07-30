@@ -1,7 +1,9 @@
 package com.example.railwaysfoodapplication;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -15,6 +17,8 @@ public class HotelRegistration extends AppCompatActivity {
     EditText username,password,cpassword;
     Button registration,signin;
     SQLiteDatabase db;
+    ConstraintLayout c10;
+    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -23,6 +27,8 @@ public class HotelRegistration extends AppCompatActivity {
         password=findViewById(R.id.newhotelpassword);
         cpassword=findViewById(R.id.newhotelconfirmpassword);
         registration=findViewById(R.id.hotelrestpassword);
+        c10=findViewById(R.id.c10);
+        c10.setBackgroundResource(R.drawable.foodimage8);
         signin=findViewById(R.id.hotelloginpage);
         db=openOrCreateDatabase("RailwayFood",MODE_PRIVATE,null);
         db.execSQL("create table if not exists HotelReg(username varchar(50),password int,confirmpassword int)");

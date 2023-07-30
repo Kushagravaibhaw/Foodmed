@@ -2,7 +2,9 @@ package com.example.railwaysfoodapplication;
 
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -16,12 +18,16 @@ public class HotelForgotPassword extends AppCompatActivity {
     EditText hotelnewusername,hotelnewpassword,hotelnewconfirmpassword;
     Button hotellogin,hotelrestpassword;
     SQLiteDatabase db;
+    ConstraintLayout c17;
+    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_hotel_forgot_password);
         hotelnewusername=findViewById(R.id.newhotelusername);
         hotelnewpassword=findViewById(R.id.newhotelpassword);
+        c17=findViewById(R.id.c17);
+        c17.setBackgroundResource(R.drawable.foodimage8);
         hotelnewconfirmpassword=findViewById(R.id.newhotelconfirmpassword);
         hotellogin=findViewById(R.id.hotelloginpage);
         hotelrestpassword=findViewById(R.id.hotelrestpassword);

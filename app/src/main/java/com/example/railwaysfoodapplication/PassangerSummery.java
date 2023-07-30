@@ -1,6 +1,7 @@
 package com.example.railwaysfoodapplication;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
 
 import android.content.Intent;
 import android.database.Cursor;
@@ -16,6 +17,7 @@ public class PassangerSummery extends AppCompatActivity {
     TextView tname,tphone,tnumber,coach,snumber,bili,orderNum;
     Button logout,otherorder,confirmo,refresh;
     SQLiteDatabase db;
+    ConstraintLayout c13;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,7 +31,8 @@ public class PassangerSummery extends AppCompatActivity {
         logout=findViewById(R.id.logout);
         otherorder=findViewById(R.id.otherorder);
         confirmo=findViewById(R.id.confirmo);
-        refresh=findViewById(R.id.refresh);
+        c13=findViewById(R.id.c13);
+        c13.setBackgroundResource(R.drawable.foodimage8);
         orderNum=findViewById(R.id.orderNum);
         Intent i3=getIntent();
         String nme=i3.getStringExtra("nm");
@@ -47,14 +50,11 @@ public class PassangerSummery extends AppCompatActivity {
         snumber.setText(snm);
         bili.setText(biln);
         db=openOrCreateDatabase("RailwayFood",MODE_PRIVATE,null);
-        refresh.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
+
                 int randominteger=getRandomInteger(1000000,9999999);
                 orderNum.setText(randominteger+"");
 
-            }
-        });
+
         db.execSQL("CREATE TABLE if not exists Bill(cname varchar(50),hoteli int,orderid int,phonenum varchar(10),trainnum varchar(10),coachnum varchar(10),sheatnum varchar(10),bil varchar(200))");
         confirmo.setOnClickListener(new View.OnClickListener() {
             @Override

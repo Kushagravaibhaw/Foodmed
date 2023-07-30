@@ -1,6 +1,5 @@
 package com.example.railwaysfoodapplication;
 
-
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
 
@@ -20,8 +19,8 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 
-public class Passanger extends AppCompatActivity {
-    Button searchotel,availablefooditems,gprs;
+public class passanger1 extends AppCompatActivity {
+    Button searchotel,availablefooditems,q;
     TextView hotelnames,tv;
     SQLiteDatabase db;
     String[] items={"Mysore","Manglore","Udupi","kolkata","Delhi","Punjab","jaipur","hydrabad","Bangalore","Hubbali"};
@@ -30,38 +29,39 @@ public class Passanger extends AppCompatActivity {
     ArrayAdapter<String> adaperItemHotels;
     ArrayList<String> addarray=new ArrayList<String>();
     ConstraintLayout passangerl;
+
     @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_passanger);
-        gprs=findViewById(R.id.searchforhotels3);
-        searchotel=findViewById(R.id.searchforhotels);
-        hotelnames=findViewById(R.id.presenthotels);
-        autocompletetext=findViewById(R.id.selectstation);
+        setContentView(R.layout.activity_passanger1);
+        q=findViewById(R.id.searchforhotels4);
+        searchotel=findViewById(R.id.searchforhotels2);
+        hotelnames=findViewById(R.id.presenthotels2);
+        autocompletetext=findViewById(R.id.selectstation2);
         autocompletetext1=findViewById(R.id.selecthotel);
-        tv=findViewById(R.id.textView10);
-        passangerl=findViewById(R.id.passangerl);
-        passangerl.setBackgroundResource(R.drawable.foodimage2);
-        availablefooditems=findViewById(R.id.availablefooditem);
+        passangerl=findViewById(R.id.l);
+        tv=findViewById(R.id.textView12);
+        passangerl.setBackgroundResource(R.drawable.foodimage3);
+        availablefooditems=findViewById(R.id.availablefooditem2);
         db=openOrCreateDatabase("RailwayFood", MODE_PRIVATE,null);
-        adapterItems=new ArrayAdapter<String>(Passanger.this,R.layout.list_items,items);
+        adapterItems=new ArrayAdapter<String>(passanger1.this,R.layout.list_phar,items);
         autocompletetext.setAdapter(adapterItems);
         autocompletetext.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 String sname=adapterView.getItemAtPosition(i).toString();
                 tv.setText(sname);
-                Toast.makeText(Passanger.this, ""+sname, Toast.LENGTH_SHORT).show();
+                Toast.makeText(passanger1.this, ":"+sname, Toast.LENGTH_SHORT).show();
             }
         });
         searchotel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 String hn= tv.getText().toString().trim();
-                Cursor c=db.rawQuery("select * from HotelDB where stationid=?",new String[]{hn+""});
+                Cursor c=db.rawQuery("select * from MedDB where stationid=?",new String[]{hn+""});
                 if(c.getCount()==0)
-                    Toast.makeText(Passanger.this, "No Data Avialable", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(passanger1.this, "No Data Avialable", Toast.LENGTH_SHORT).show();
                 else {
                     c.moveToFirst();
                     String all = "";
@@ -71,19 +71,19 @@ public class Passanger extends AppCompatActivity {
                         all=all+hid+"\t\t"+hname+"\n";
                         addarray.add(hname);
                     } while (c.moveToNext());
-                    hotelnames.setText("Hotels on this Station are:"+all);
+                    hotelnames.setText("pharmacies on this Station are:"+all);
                 }
 
             }
         });
-        adaperItemHotels=new ArrayAdapter<String>(Passanger.this,R.layout.list_items,addarray);
+        adaperItemHotels=new ArrayAdapter<String>(passanger1.this,R.layout.list_phar,addarray);
         autocompletetext1.setAdapter(adaperItemHotels);
         autocompletetext1.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 String sname=adapterView.getItemAtPosition(i).toString();
                 tv.setText(sname);
-                Toast.makeText(Passanger.this, ":"+sname, Toast.LENGTH_SHORT).show();
+                Toast.makeText(passanger1.this, ""+sname, Toast.LENGTH_SHORT).show();
             }
         });
         availablefooditems.setOnClickListener(new View.OnClickListener() {
@@ -91,9 +91,9 @@ public class Passanger extends AppCompatActivity {
             public void onClick(View view) {
                 String hn=tv.getText().toString();
                 db.execSQL("create table if not exists ItemPrice (itemname varchar(50),price int)");
-                Cursor c=db.rawQuery("select * from HotelDB where hotelname=?",new String[]{hn+""});
+                Cursor c=db.rawQuery("select * from MedDB where pharmaname=?",new String[]{hn+""});
                 if(c.getCount()==0)
-                    Toast.makeText(Passanger.this, "Please Enter a valid ID", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(passanger1.this, "Please Enter a valid ID", Toast.LENGTH_SHORT).show();
                 else{
                     c.moveToFirst();
                     String all="";
@@ -118,14 +118,14 @@ public class Passanger extends AppCompatActivity {
 
                         all=all+"Available Items Are:\nItem Name\t\t\t\tCost\n"+itm1+"\t\t\t\t"+p1+"\n"+itm2+"\t\t\t\t"+p2+"\n"+itm3+"\t\t\t\t"+p3+"\n"+itm4+"\t\t\t\t"+p4+"\n"+itm5+"\t\t\t\t"+p5+"\n";
                     }while(c.moveToNext());
-                    Intent i=new Intent(Passanger.this,PassangerOrder.class);
-                    i.putExtra("food",all);
-                    i.putExtra("HotelID",hid);
+                    Intent i=new Intent(passanger1.this,pharmacyorder.class);
+                    i.putExtra("food1",all);
+                    i.putExtra("HotelID1",hid);
                     startActivityForResult(i,1);
                 }
             }
         });
-        gprs.setOnClickListener(new View.OnClickListener() {
+        q.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent i=new Intent(Intent.ACTION_VIEW, Uri.parse("google.navigation:q="));

@@ -1,7 +1,9 @@
 package com.example.railwaysfoodapplication;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -20,11 +22,15 @@ public class Hotel extends AppCompatActivity {
     EditText stid,hotelid,hotelname,item1,item2,item3,item4,item5,price1,price2,price3,price4,price5;
     SQLiteDatabase db;
     TextView tv;
+    ConstraintLayout c5;
+    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_hotel);
         enter=findViewById(R.id.add);
+        c5=findViewById(R.id.c5);
+        c5.setBackgroundResource(R.drawable.foodimage6);
         remove=findViewById(R.id.remove);
         hotelid=findViewById(R.id.hotelid);
         hotelname=findViewById(R.id.hotelname);

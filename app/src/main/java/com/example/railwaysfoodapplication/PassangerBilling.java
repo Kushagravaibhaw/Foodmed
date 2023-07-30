@@ -2,6 +2,7 @@ package com.example.railwaysfoodapplication;
 
 
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -10,20 +11,25 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
 
 public class PassangerBilling extends AppCompatActivity {
     TextView tv1;
     EditText name,phonenumber,trainnumber,coachnumber,sheatnumber;
     Button confirmorder;
+    ConstraintLayout c14;
+    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_passanger_billing);
         tv1=findViewById(R.id.tv1);
+        c14=findViewById(R.id.c14);
+        c14.setBackgroundResource(R.drawable.foodimage8);
         Intent i2=getIntent();
         String bil= i2.getStringExtra("Bill");
         int hied=i2.getIntExtra("hotid",0);
-        tv1.setText(bil+"\n"+hied);
+        tv1.setText(bil+"\n Hotel id :"+hied);
         String bilam=i2.getStringExtra("bilamount");
         name=findViewById(R.id.name);
         phonenumber=findViewById(R.id.phone);

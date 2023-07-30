@@ -2,17 +2,19 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/c5"
+    android:id="@+id/c9"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Hotel">
+    tools:context=".pharmacy"
+    tools:layout_editor_absoluteX="-8dp"
+    tools:layout_editor_absoluteY="56dp">
 
     <Button
-        android:id="@+id/remove"
+        android:id="@+id/remove2"
         android:layout_width="350dp"
         android:layout_height="wrap_content"
         android:backgroundTint="@color/white"
-        android:text="Remove Hotel"
+        android:text="Remove pharmacies"
         android:textColor="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -22,125 +24,28 @@
         app:layout_constraintVertical_bias="0.976" />
 
     <Button
-        android:id="@+id/add"
+        android:id="@+id/add2"
         android:layout_width="350dp"
-        android:layout_height="wrap_content"
+        android:layout_height="38dp"
         android:backgroundTint="@color/white"
-        android:text="Add Hotel"
+        android:text="Add pharmacies"
         android:textColor="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.622"
+        app:layout_constraintHorizontal_bias="0.629"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.896" />
-
-
-    <EditText
-        android:id="@+id/hotelname"
-        android:layout_width="350dp"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:hint="Enter Hotel Name"
-        android:inputType="textPersonName"
-        android:textColorHint="@color/white"
-        android:textColor="#FDF9F9"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.622"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.386" />
+        app:layout_constraintVertical_bias="0.876" />
 
     <EditText
-        android:id="@+id/hotelid"
-        android:layout_width="350dp"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:hint="Enter Hotel ID"
-        android:textColorHint="@color/white"
-        android:inputType="number"
-        android:textColor="#FDF9F9"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.622"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.297" />
-
-    <EditText
-        android:id="@+id/stationid"
-        android:layout_width="350dp"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:hint="Enter Station Name"
-        android:textColorHint="@color/white"
-        android:inputType="text"
-        android:textColor="#FDF9F9"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.622"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.208" />
-
-    <EditText
-        android:id="@+id/item2"
+        android:id="@+id/item9"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:ems="10"
-        android:hint="Enter Second Item"
-        android:inputType="textPersonName"
-        android:textColorHint="@color/white"
-        android:textColor="#FDF9F9"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.189"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.558" />
-
-    <EditText
-        android:id="@+id/item3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:hint="Enter Third Item"
-        android:textColorHint="@color/white"
-        android:textColor="#FDF9F9"
-        android:inputType="textPersonName"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.189"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.642" />
-
-    <EditText
-        android:id="@+id/item4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:textColorHint="@color/white"
-        android:hint="Enter Fourth Item"
-        android:textColor="#FDF9F9"
-        android:inputType="textPersonName"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.189"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.73" />
-
-    <EditText
-        android:id="@+id/item5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textColorHint="@color/white"
         android:ems="10"
         android:hint="Enter Fifth Item"
-        android:textColor="#FDF9F9"
         android:inputType="textPersonName"
+        android:textColor="#F8F5F5"
+        android:textColorHint="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.189"
@@ -149,14 +54,142 @@
         app:layout_constraintVertical_bias="0.807" />
 
     <EditText
-        android:id="@+id/item1"
+        android:id="@+id/item8"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
+        android:hint="Enter Fourth Item"
+        android:inputType="textPersonName"
+        android:textColor="#F8F5F5"
         android:textColorHint="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.189"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.73" />
+
+    <EditText
+        android:id="@+id/item7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Enter Third Item"
+        android:inputType="textPersonName"
+        android:textColor="#F8F5F5"
+        android:textColorHint="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.189"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.642" />
+
+    <EditText
+        android:id="@+id/item6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Enter Second Item"
+        android:inputType="textPersonName"
+        android:textColor="#F8F5F5"
+        android:textColorHint="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.189"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.558" />
+
+    <EditText
+        android:id="@+id/price"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Price"
+        android:inputType="number"
+        android:textColor="#F8F5F5"
+        android:textColorHint="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.874"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.548" />
+
+    <EditText
+        android:id="@+id/price6"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Price"
+        android:inputType="number"
+        android:textColor="#F8F5F5"
+        android:textColorHint="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.874"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.469" />
+
+    <EditText
+        android:id="@+id/price7"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Price"
+        android:inputType="number"
+        android:textColor="#F8F5F5"
+        android:textColorHint="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.874"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.642" />
+
+    <EditText
+        android:id="@+id/price8"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Price"
+        android:inputType="number"
+        android:textColor="#F8F5F5"
+        android:textColorHint="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.874"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.73" />
+
+    <EditText
+        android:id="@+id/price9"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Price"
+        android:inputType="number"
+        android:textColor="#F8F5F5"
+        android:textColorHint="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.874"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.807" />
+
+    <EditText
+        android:id="@+id/item"
+        android:layout_width="181dp"
+        android:layout_height="49dp"
+        android:ems="10"
         android:hint="Enter First Item"
         android:inputType="textPersonName"
-        android:textColor="#FDF9F9"
+        android:textColor="#F8F5F5"
+        android:textColorHint="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.189"
@@ -165,106 +198,82 @@
         app:layout_constraintVertical_bias="0.467" />
 
     <EditText
-        android:id="@+id/price1"
-        android:layout_width="100dp"
+        android:id="@+id/stationid2"
+        android:layout_width="350dp"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:hint="Price"
+        android:hint="Enter Station Name"
+        android:inputType="text"
+        android:textColor="#F8F5F5"
         android:textColorHint="@color/white"
-        android:textColor="#FDF9F9"
-        android:inputType="number"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.9"
+        app:layout_constraintHorizontal_bias="0.655"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.466" />
+        app:layout_constraintVertical_bias="0.205" />
 
     <EditText
-        android:id="@+id/price2"
-        android:layout_width="100dp"
+        android:id="@+id/hotelid2"
+        android:layout_width="350dp"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:textColorHint="@color/white"
-        android:textColor="#FDF9F9"
-        android:hint="Price"
+        android:hint="Enter Hotel ID"
         android:inputType="number"
+        android:textColor="#F8F5F5"
+        android:textColorHint="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.9"
+        app:layout_constraintHorizontal_bias="0.622"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.558" />
+        app:layout_constraintVertical_bias="0.297" />
 
     <EditText
-        android:id="@+id/price3"
-        android:layout_width="100dp"
+        android:id="@+id/hotelid3"
+        android:layout_width="350dp"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:textColor="#FDF9F9"
-        android:hint="Price"
-        android:textColorHint="@color/white"
+        android:hint="Enter pharmacy ID"
         android:inputType="number"
+        android:textColor="#F8F5F5"
+        android:textColorHint="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.9"
+        app:layout_constraintHorizontal_bias="0.622"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.642" />
+        app:layout_constraintVertical_bias="0.297" />
 
     <EditText
-        android:id="@+id/price4"
-        android:layout_width="100dp"
+        android:id="@+id/hotelname2"
+        android:layout_width="350dp"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:textColor="#FDF9F9"
-        android:hint="Price"
+        android:hint="Enter pharmacy Name"
+        android:inputType="textPersonName"
+        android:textColor="#F8F5F5"
         android:textColorHint="@color/white"
-        android:inputType="number"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.9"
+        app:layout_constraintHorizontal_bias="0.622"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.73" />
-
-    <EditText
-        android:id="@+id/price5"
-        android:layout_width="100dp"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:textColor="#FDF9F9"
-        android:hint="Price"
-        android:textColorHint="@color/white"
-        android:inputType="number"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.9"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.807" />
+        app:layout_constraintVertical_bias="0.386" />
 
     <TextView
-        android:id="@+id/tv"
-        android:layout_width="350dp"
-        android:layout_height="70dp"
+        android:id="@+id/tv5"
+        android:layout_width="369dp"
+        android:layout_height="63dp"
         android:fontFamily="sans-serif-smallcaps"
-        android:text="Railways Hotels"
+        android:text="Railways Pharmacies"
         android:textAppearance="@style/TextAppearance.AppCompat.Display2"
-        android:textColor="#F5F5F8"
+        android:textColor="#3F51B5"
+        android:textSize="34sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.491"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.063" />
-
-    <TextView
-        android:id="@+id/invisibleText"
-        android:layout_width="1dp"
-        android:layout_height="1dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

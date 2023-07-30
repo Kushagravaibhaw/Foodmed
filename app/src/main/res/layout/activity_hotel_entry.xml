@@ -2,6 +2,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/c"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".HotelEntry">
@@ -13,29 +14,30 @@
         android:fontFamily="sans-serif-smallcaps"
         android:text="Instructions\n"
         android:textAppearance="@style/TextAppearance.AppCompat.Display2"
-        android:textColor="#3F51B5"
+        android:textColor="#FBFBFF"
+        android:textSize="40sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.491"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.054" />
+        app:layout_constraintVertical_bias="0.024" />
 
     <TextView
         android:id="@+id/tv2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="cursive"
-        android:text="1.In Hotel ID field Always Enter The ID Given By Government          \n2.You Can Enter Any Five Items\n3.You Should Enter Price Of Each Item Next To The Item           \n4.Before Pressing The ADD Button Always Cross Check the Information Given By You\n5.You Can Not Edit Your Information\n6.TO EDIT YOUR INFORMATION REMOVE YOUR HOTEL USING REMOVE BUTTON AND THEN ADD IT AGAIN.TO REMOVE JUST ENTER YOUR ID "
+        android:layout_width="401dp"
+        android:layout_height="313dp"
+        android:fontFamily="serif"
+        android:text="1.In Hotel ID field Always Enter The ID Given By Government          \n2.You Can Enter Any Five Items\n3.You Should Enter Price Of Each Item Next To The Item           \n4.Before Pressing The Add Button Always Cross Check the Information Given By You\n5.You Can Not Edit Your Information\n6.To Edit Your Information Remove Your Hotel Using Remove Button And Then Add It Again.To Remove Just Enter Your ID "
         android:textAppearance="@style/TextAppearance.AppCompat.Body2"
-        android:textColor="#3F51B5"
-        android:textSize="25dp"
+        android:textColor="#EFF0F4"
+        android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.355" />
+        app:layout_constraintVertical_bias="0.299" />
 
     <Button
         android:id="@+id/proceed"
@@ -46,22 +48,22 @@
         android:textColor="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.438"
+        app:layout_constraintHorizontal_bias="0.433"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.846" />
+        app:layout_constraintVertical_bias="0.751" />
 
     <Button
         android:id="@+id/orders"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="112dp"
+        android:layout_height="41dp"
         android:backgroundTint="@color/white"
         android:text="Order"
         android:textColor="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.438"
+        app:layout_constraintHorizontal_bias="0.424"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.956" />
+        app:layout_constraintVertical_bias="0.868" />
 </androidx.constraintlayout.widget.ConstraintLayout>

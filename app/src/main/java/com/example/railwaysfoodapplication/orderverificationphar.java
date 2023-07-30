@@ -4,7 +4,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
 
 import android.annotation.SuppressLint;
-import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
@@ -15,33 +14,34 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class OrderVerification extends AppCompatActivity {
+public class orderverificationphar extends AppCompatActivity {
     TextView tv6,textView9;
     EditText hid2;
     Button entero,vieworder,sendsms;
     SQLiteDatabase db;
-    ConstraintLayout c16;
+    ConstraintLayout c15;
+
     @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_order_verification);
-        tv6=findViewById(R.id.textView6);
-        hid2=findViewById(R.id.hiddddd);
-        entero=findViewById(R.id.entero);
-        vieworder=findViewById(R.id.vieworder);
-        textView9=findViewById(R.id.textView9);
-        c16=findViewById(R.id.c16);
-        c16.setBackgroundResource(R.drawable.foodimage8);
-        sendsms=findViewById(R.id.sendsms);
+        setContentView(R.layout.activity_orderverificationphar);
+        tv6=findViewById(R.id.textView20);
+        hid2=findViewById(R.id.hiddddd2);
+        c15=findViewById(R.id.c15);
+        c15.setBackgroundResource(R.drawable.foodimage8);
+        entero=findViewById(R.id.entero2);
+        vieworder=findViewById(R.id.vieworder2);
+        textView9=findViewById(R.id.textView21);
+        sendsms=findViewById(R.id.sendsms2);
         db=openOrCreateDatabase("RailwayFood", MODE_PRIVATE,null);
         entero.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 int hied=Integer.parseInt(hid2.getText().toString());
-                Cursor c=db.rawQuery("select * from HotelDB where hotelID=?",new String[]{hied+""});
+                Cursor c=db.rawQuery("select * from MedDB where pharamaid=?",new String[]{hied+""});
                 if(c.getCount()==0)
-                    Toast.makeText(OrderVerification.this, "Please Enter a Valid HotelID", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(orderverificationphar.this, "Please Enter a Valid Pharmacie id", Toast.LENGTH_SHORT).show();
                 else{
                     c.moveToFirst();
                     String all2="";
@@ -66,9 +66,9 @@ public class OrderVerification extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 int hied=Integer.parseInt(hid2.getText().toString());
-                Cursor c=db.rawQuery("select * from Bill where hoteli=?",new String[]{hied+""});
+                Cursor c=db.rawQuery("select * from Billpharma where pharmaid=?",new String[]{hied+""});
                 if(c.getCount()==0)
-                    Toast.makeText(OrderVerification.this, "No Order Is Recived Yet", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(orderverificationphar.this, "No Order Is Recived Yet", Toast.LENGTH_SHORT).show();
                 else{
                     c.moveToFirst();
                     String all3="";
@@ -81,7 +81,7 @@ public class OrderVerification extends AppCompatActivity {
                         String coachnumber=c.getString(5);
                         String sheatnumber=c.getString(6);
                         String billi=c.getString(7);
-                        all3=all3+"HotelID:"+hotelid+"\nName:"+nme+"\nOrderID:"+orderid+"\nPhone Number:"+phonenumber+"\nTrain Number:"+trainnumber+"\nCoach Number:"+coachnumber+"\nSheat Number"+sheatnumber+"\nBill:"+billi;
+                        all3=all3+"PharmacyID:"+hotelid+"\nName:"+nme+"\nOrderID:"+orderid+"\nPhone Number:"+phonenumber+"\nTrain Number:"+trainnumber+"\nCoach Number:"+coachnumber+"\nSheat Number"+sheatnumber+"\nBill:"+billi;
                     }while (c.moveToNext());
                     textView9.setText(all3);
                 }
@@ -91,9 +91,9 @@ public class OrderVerification extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 int hied=Integer.parseInt(hid2.getText().toString());
-                Cursor c=db.rawQuery("select * from Bill where hoteli=?",new String[]{hied+""});
+                Cursor c=db.rawQuery("select * from Billpharma where pharmaid=?",new String[]{hied+""});
                 if(c.getCount()==0)
-                    Toast.makeText(OrderVerification.this, "No Order Is Recived Yet", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(orderverificationphar.this, "No Order Is Recived Yet", Toast.LENGTH_SHORT).show();
                 else{
                     String nme,phonenumber,billi,orderid;
                     c.moveToFirst();
@@ -105,7 +105,7 @@ public class OrderVerification extends AppCompatActivity {
                     }while (c.moveToNext());
                     SmsManager sms=SmsManager.getDefault();
                     sms.sendTextMessage(phonenumber,null,"Your Order Id:"+orderid+"\nWill be delivered to you within 20 min\nThank You",null,null);
-                    Toast.makeText(OrderVerification.this, "Message is sent Sucessfuly", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(orderverificationphar.this, "Message is sent Sucessfuly", Toast.LENGTH_SHORT).show();
 
                 }
             }

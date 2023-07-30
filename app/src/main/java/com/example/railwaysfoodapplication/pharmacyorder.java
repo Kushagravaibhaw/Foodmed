@@ -19,7 +19,7 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 
-public class PassangerOrder extends AppCompatActivity {
+public class pharmacyorder extends AppCompatActivity {
     TextView textView,quantity1,quantity2,quantity3,quantity4,quantity5;
     AutoCompleteTextView autocompletetext1,autocompletetext2,autocompletetext3,autocompletetext4,autocompletetext5;
     Button next;
@@ -33,36 +33,37 @@ public class PassangerOrder extends AppCompatActivity {
     EditText p1,p2,p3,p4,p5;
     ConstraintLayout passangerorderl;
 
+
     @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_passanger_order);
-        textView=findViewById(R.id.textView);
-        autocompletetext1=findViewById(R.id.selitem6);
-        autocompletetext2=findViewById(R.id.selitem7);
-        autocompletetext3=findViewById(R.id.selitem8);
-        autocompletetext4=findViewById(R.id.selitem9);
-        autocompletetext5=findViewById(R.id.selitem10);
-        quantity1=findViewById(R.id.ts1);
-        quantity2=findViewById(R.id.ts2);
-        quantity3=findViewById(R.id.ts3);
-        quantity4=findViewById(R.id.ts4);
-        quantity5=findViewById(R.id.ts5);
-        passangerorderl=findViewById(R.id.passangerl);
-        passangerorderl.setBackgroundResource(R.drawable.foodimage8);
-        p1=findViewById(R.id.p6);
-        p2=findViewById(R.id.p7);
-        p3=findViewById(R.id.p3);
-        p4=findViewById(R.id.p4);
-        p5=findViewById(R.id.p5);
-        next=findViewById(R.id.next);
+        setContentView(R.layout.activity_pharmacyorder);
+        textView=findViewById(R.id.textView13);
+        autocompletetext1=findViewById(R.id.selitem66);
+        autocompletetext2=findViewById(R.id.selitem77);
+        autocompletetext3=findViewById(R.id.selitem88);
+        autocompletetext4=findViewById(R.id.selitem99);
+        autocompletetext5=findViewById(R.id.selitem100);
+        quantity1=findViewById(R.id.ts);
+        quantity2=findViewById(R.id.ts6);
+        quantity3=findViewById(R.id.ts7);
+        quantity4=findViewById(R.id.ts8);
+        quantity5=findViewById(R.id.ts9);
+        passangerorderl=findViewById(R.id.l1);
+        passangerorderl.setBackgroundResource(R.drawable.foodimage7);
+        p1=findViewById(R.id.p);
+        p2=findViewById(R.id.p2);
+        p3=findViewById(R.id.p11);
+        p4=findViewById(R.id.p12);
+        p5=findViewById(R.id.p13);
+        next=findViewById(R.id.next2);
         Intent i=getIntent();
-        String tv= i.getStringExtra("food");
-        int hidd=i.getIntExtra("HotelID",0);
-        textView.setText(tv+"\nHotelID:"+hidd);
+        String tv= i.getStringExtra("food1");
+        int hidd=i.getIntExtra("HotelID1",0);
+        textView.setText(tv+"\nHotelID1:"+hidd);
         db=openOrCreateDatabase("RailwayFood", MODE_PRIVATE,null);
-        Cursor c=db.rawQuery("select * from HotelDB where hotelid=?",new String[]{hidd+""});
+        Cursor c=db.rawQuery("select * from MedDB where pharamaid=?",new String[]{hidd+""});
         c.moveToFirst();
         do{
             String f1=c.getString(3);
@@ -81,7 +82,7 @@ public class PassangerOrder extends AppCompatActivity {
             int f10=c.getInt(12);
             addarray.add("Rs."+f10+"       "+f5);
         }while (c.moveToNext());
-        adapterItem1=new ArrayAdapter<String>(PassangerOrder.this,R.layout.list_items,addarray);
+        adapterItem1=new ArrayAdapter<String>(pharmacyorder.this,R.layout.list_items,addarray);
         autocompletetext1.setAdapter(adapterItem1);
         autocompletetext1.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -91,7 +92,7 @@ public class PassangerOrder extends AppCompatActivity {
                 //Toast.makeText(PassangerOrder.this, "Item:"+sname, Toast.LENGTH_SHORT).show();
             }
         });
-        adapterItem2=new ArrayAdapter<String>(PassangerOrder.this,R.layout.list_items,addarray);
+        adapterItem2=new ArrayAdapter<String>(pharmacyorder.this,R.layout.list_items,addarray);
         autocompletetext2.setAdapter(adapterItem2);
         autocompletetext2.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -101,34 +102,34 @@ public class PassangerOrder extends AppCompatActivity {
                 //Toast.makeText(PassangerOrder.this, "Item:"+sname, Toast.LENGTH_SHORT).show();
             }
         });
-        adapterItem3=new ArrayAdapter<String>(PassangerOrder.this,R.layout.list_items,addarray);
+        adapterItem3=new ArrayAdapter<String>(pharmacyorder.this,R.layout.list_items,addarray);
         autocompletetext3.setAdapter(adapterItem3);
         autocompletetext3.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 String sname=adapterView.getItemAtPosition(i).toString();
                 quantity3.setText(sname);
-                Toast.makeText(PassangerOrder.this, "Item:"+sname, Toast.LENGTH_SHORT).show();
+                Toast.makeText(pharmacyorder.this, "Item:"+sname, Toast.LENGTH_SHORT).show();
             }
         });
-        adapterItem4=new ArrayAdapter<String>(PassangerOrder.this,R.layout.list_items,addarray);
+        adapterItem4=new ArrayAdapter<String>(pharmacyorder.this,R.layout.list_items,addarray);
         autocompletetext4.setAdapter(adapterItem4);
         autocompletetext4.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 String sname=adapterView.getItemAtPosition(i).toString();
                 quantity4.setText(sname);
-                Toast.makeText(PassangerOrder.this, "Item:"+sname, Toast.LENGTH_SHORT).show();
+                Toast.makeText(pharmacyorder.this, "Item:"+sname, Toast.LENGTH_SHORT).show();
             }
         });
-        adapterItem5=new ArrayAdapter<String>(PassangerOrder.this,R.layout.list_items,addarray);
+        adapterItem5=new ArrayAdapter<String>(pharmacyorder.this,R.layout.list_items,addarray);
         autocompletetext5.setAdapter(adapterItem5);
         autocompletetext5.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 String sname=adapterView.getItemAtPosition(i).toString();
                 quantity5.setText(sname);
-                Toast.makeText(PassangerOrder.this, "Item:"+sname, Toast.LENGTH_SHORT).show();
+                Toast.makeText(pharmacyorder.this, "Item:"+sname, Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -222,17 +223,17 @@ public class PassangerOrder extends AppCompatActivity {
                         i=i+(i5*i15);
                     }
                 }
-                Toast.makeText(PassangerOrder.this, i+"", Toast.LENGTH_SHORT).show();
+                Toast.makeText(pharmacyorder.this, i+"", Toast.LENGTH_SHORT).show();
                 String q11=p1.getText().toString();
                 String q22=(p2.getText().toString());
                 String q33=(p3.getText().toString());
                 String q44=(p4.getText().toString());
                 String q55=(p5.getText().toString());
                 String all1="Price \t\t\t\tItem\t\t\t\t\t\t\tQuantity\n"+f1+"\t\t\t\t"+q11+"\n"+f2+"\t\t\t\t"+q22+"\n"+f3+"\t\t\t\t"+q33+"\n"+f4+"\t\t\t\t"+q44+"\n"+f5+"\t\t\t\t"+q55+"\n\nTotal Amount:"+i;
-                Intent i2=new Intent(PassangerOrder.this,PassangerBilling.class);
-                i2.putExtra("Bill",all1);
-                i2.putExtra("hotid",hidd);
-                i2.putExtra("bilamount",i);
+                Intent i2=new Intent(pharmacyorder.this,passengerpharambill.class);
+                i2.putExtra("Bill1",all1);
+                i2.putExtra("hotid1",hidd);
+                i2.putExtra("bilamount1",i);
                 startActivityForResult(i2,2);
             }
         });

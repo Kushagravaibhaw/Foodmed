@@ -10,7 +10,7 @@ import android.view.View;
 import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
-    Button hotel,passanger;
+    Button hotel,passanger,b;
     ConstraintLayout l;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,13 +18,21 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         hotel=findViewById(R.id.hotels);
         passanger=findViewById(R.id.passanger);
+        b= findViewById(R.id.pharma);
         l=findViewById(R.id.l);
+
         l.setBackgroundResource(R.drawable.foodimage1);
 
         hotel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(MainActivity.this,HotelEntry.class).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK));
+            }
+        });
+        b.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this,pharmacyentry.class).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK));
             }
         });
         passanger.setOnClickListener(new View.OnClickListener() {

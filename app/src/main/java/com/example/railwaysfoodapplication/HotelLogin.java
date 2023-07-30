@@ -2,7 +2,9 @@ package com.example.railwaysfoodapplication;
 
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -14,8 +16,10 @@ import android.widget.Toast;
 
 public class HotelLogin extends AppCompatActivity {
     EditText lusername,lpassword;
-    Button login,forregistraion,hotelforgotpassword;
+    Button login,login2,forregistraion,hotelforgotpassword;
     SQLiteDatabase db;
+    ConstraintLayout l;
+    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -23,6 +27,9 @@ public class HotelLogin extends AppCompatActivity {
         lusername=findViewById(R.id.newhotelusername);
         lpassword=findViewById(R.id.newhotelpassword);
         login=findViewById(R.id.hotelrestpassword);
+        login2=findViewById(R.id.hotelrestpassword2);
+        l=findViewById(R.id.c14);
+        l.setBackgroundResource(R.drawable.foodimage4);
         hotelforgotpassword=findViewById(R.id.hotelforgotpassword);
         forregistraion=findViewById(R.id.hotelloginpage);
         db=openOrCreateDatabase("RailwayFood",MODE_PRIVATE,null);
@@ -48,6 +55,32 @@ public class HotelLogin extends AppCompatActivity {
 
                 }
             }
+        });
+
+        login2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String uname=lusername.getText().toString();
+                int pss=Integer.parseInt(lpassword.getText().toString());
+                Cursor c=db.rawQuery("select * from HotelReg where username=?",new String[]{uname+""});
+                if(c.getCount()==0)
+                    Toast.makeText(HotelLogin.this, "Sorry no user exists", Toast.LENGTH_SHORT).show();
+                else{
+                    c.moveToFirst();
+                    do{
+                        int ps=c.getInt(1);
+                        if(ps!=pss){
+                            Toast.makeText(HotelLogin.this, "Password Does Not Match", Toast.LENGTH_SHORT).show();
+                        }
+                        else {
+                            startActivity(new Intent(HotelLogin.this,passanger1.class));
+                        }
+                    }while (c.moveToNext());
+
+                }
+            }
+
+
         });
         forregistraion.setOnClickListener(new View.OnClickListener() {
             @Override
